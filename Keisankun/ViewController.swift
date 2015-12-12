@@ -57,15 +57,15 @@ class ViewController: UIViewController {
         
         for var y = 0; y < yButtonCount; y++ {
             for var x = 0; x < xButtonCount; x++ {
-                var button = UIButton()
+                let button = UIButton()
                 // button width
-                var buttonWidth = (screenWidth - (buttonMargin * (Double(xButtonCount) + 1 ))) / Double(xButtonCount)
+                let buttonWidth = (screenWidth - (buttonMargin * (Double(xButtonCount) + 1 ))) / Double(xButtonCount)
                 // button height
-                var buttonHeight = (screenHeight - resultArea - ((buttonMargin * Double(yButtonCount)+1))) / Double(yButtonCount)
+                let buttonHeight = (screenHeight - resultArea - ((buttonMargin * Double(yButtonCount)+1))) / Double(yButtonCount)
                 // x coordinate
-                var buttonPositionX = (screenWidth - buttonMargin) / Double(xButtonCount) * Double(x) + buttonMargin
+                let buttonPositionX = (screenWidth - buttonMargin) / Double(xButtonCount) * Double(x) + buttonMargin
                 // y coordinate
-                var buttonPositionY = (screenHeight - resultArea - buttonMargin) / Double(yButtonCount) * Double(y) + buttonMargin + resultArea
+                let buttonPositionY = (screenHeight - resultArea - buttonMargin) / Double(yButtonCount) * Double(y) + buttonMargin + resultArea
                 // button position
                 button.frame = CGRect(x:buttonPositionX,y: buttonPositionY, width: buttonWidth, height: buttonHeight)
                 // button color
