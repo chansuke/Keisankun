@@ -55,6 +55,13 @@ class ViewController: UIViewController {
         // add resultLabel to ViewController.view is a property to display
         self.view.addSubview(resultLabel)
         
+        let buttonLabels = [
+                            "7","8","9","x",
+                            "4","5","6","-",
+                            "1","2","3","+",
+                            "0","C","÷","="
+        ]
+        
         for var y = 0; y < yButtonCount; y++ {
             for var x = 0; x < xButtonCount; x++ {
                 let button = UIButton()
@@ -70,8 +77,17 @@ class ViewController: UIViewController {
                 button.frame = CGRect(x:buttonPositionX,y: buttonPositionY, width: buttonWidth, height: buttonHeight)
                 // button color
                 button.backgroundColor = UIColor.orangeColor()
+                
+                let butonNumber = y * xButtonCount + x
+                button.setTitle(buttonLabels[butonNumber],
+                    forState: UIControlState.Normal)
+                // set button
                 self.view.addSubview(button)
             }
         }
+        
+        
+        
+        
     }
 }
