@@ -22,8 +22,17 @@ class ViewController: UIViewController {
     let screenHeight:Double = Double(UIScreen.mainScreen().bounds.size.height)
     // margin between button
     let buttonMargin = 10.0
-    //
+
     var resultArea = 0.0
+    
+    var number1:Double = 0.0
+    
+    var number2:Double = 0.0
+    
+    var result:Double = 0.0
+    
+    var operatorId:String = ""
+    
     
     override func viewDidLoad() {
     
@@ -79,15 +88,19 @@ class ViewController: UIViewController {
                 button.backgroundColor = UIColor.orangeColor()
                 
                 let butonNumber = y * xButtonCount + x
+                
                 button.setTitle(buttonLabels[butonNumber],
                     forState: UIControlState.Normal)
+                // Action when button tapped
+                button.addTarget(self, action: "buttonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
                 // set button
                 self.view.addSubview(button)
             }
         }
-        
-        
-        
-        
+    }
+    // method when button tapped
+    func buttonTapped(sender:UIButton){
+        let tappedButtonTitle:String = sender.currentTitle!
+        print("\(tappedButtonTitle)Button tapped")
     }
 }
